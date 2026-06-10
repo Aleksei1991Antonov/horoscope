@@ -2,19 +2,23 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/horoscope/favicon.svg" />
+  <!-- Политика безопасности для работы Метрики и MAX SDK -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:; script-src * 'self' 'unsafe-inline' 'unsafe-eval' https://mc.yandex.ru https://yastatic.net https://st.max.ru; connect-src * 'self' 'unsafe-inline' 'unsafe-eval' https://mc.yandex.ru; img-src * 'self' data: https://mc.yandex.ru; style-src * 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- MAX SDK -->
   <script src="https://st.max.ru/js/max-web-app.js"></script>
 
+  <title>Гороскоп</title>
 
-  <title>Гороскоп V2</title>
-
-  <!-- Yandex.Metrika counter (Script stays in head) -->
+  <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();
@@ -31,13 +35,16 @@
     });
   </script>
   <!-- /Yandex.Metrika counter -->
-  <script type="module" crossorigin src="/horoscope/assets/main-CBV90834.js"></script>
-  <link rel="stylesheet" crossorigin href="/horoscope/assets/main-Ce0pHHcQ.css">
+  <script type="module" crossorigin src="./assets/main-CnnH4i9Z.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-BYUw5ZZ3.css">
 </head>
 <body>
-<!-- Yandex.Metrika counter (Noscript moved here) -->
+<!-- Yandex.Metrika noscript -->
 <noscript><div><img src="https://mc.yandex.ru/watch/109130248" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-<div id="root"></div>
+<div id="root"></div>
+
+<!-- ВАЖНО: Если вы загружаете это в бакет, убедитесь, что путь /src/main.tsx корректен
+     или используйте билд из папки dist -->
 </body>
 </html>
