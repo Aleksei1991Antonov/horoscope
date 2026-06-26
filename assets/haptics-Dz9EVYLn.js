@@ -1,1 +1,0 @@
-var e=async()=>{let e=window.WebApp?.HapticFeedback;if(e)try{e.notificationOccurred(`success`)}catch{}},t=async()=>{await e()};export{e as n,t};
