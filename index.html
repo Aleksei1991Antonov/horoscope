@@ -27,13 +27,43 @@
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=109130248", "ym");
     ym(109130248, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true });
   </script>
-  <script type="module" crossorigin src="./assets/main-gGVhzUuv.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-COtjx_rD.css">
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('user_theme') || 'morning-magic';
+        var m = localStorage.getItem('app-appearance-mode') || 'system';
+        var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var wantDark = m === 'dark' || (m === 'system' && sysDark);
+        var lt = { 'max-light': 'max-dark', 'morning-magic': 'night-ether', 'nova-day': 'nova-night' };
+        var dt = { 'max-dark': 'max-light', 'night-ether': 'morning-magic', 'nova-night': 'nova-day' };
+        var isDarkTheme = !!dt[t];
+        var resolved = wantDark ? (isDarkTheme ? t : lt[t] || 'max-dark') : (isDarkTheme ? dt[t] || 'morning-magic' : t);
+        document.documentElement.dataset.theme = resolved;
+        var bg = resolved === 'max-dark' || resolved === 'night-ether' || resolved === 'nova-night' ? '#0F1115' : '#FBF6F0';
+        document.documentElement.style.backgroundColor = bg;
+        var metaCs = document.getElementById('color-scheme-meta');
+        if (metaCs) metaCs.content = resolved === 'max-dark' || resolved === 'night-ether' || resolved === 'nova-night' ? 'dark' : 'light';
+      } catch(e) {
+        document.documentElement.dataset.theme = 'morning-magic';
+        document.documentElement.style.backgroundColor = '#FBF6F0';
+      }
+    })();
+  </script>
+  <style>
+    #splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;pointer-events:none}
+    .splash-label{font-size:0.5625rem;font-weight:900;text-transform:uppercase;letter-spacing:0.25em;font-family:Manrope,system-ui,sans-serif}
+  </style>
+  <script type="module" crossorigin src="./assets/main-DTpK_3m6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-sLRZALv7.css">
 </head>
 <body>
 <noscript><div><img src="https://mc.yandex.ru/watch/109130248" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-<div id="root"></div>
+<div id="root">
+  <div id="splash">
+    <span class="splash-label" style="color:rgba(44,40,36,0.3)">Гороскоп</span>
+  </div>
+</div>
 
 <!-- Исправленный путь для Vite -->
 </body>
